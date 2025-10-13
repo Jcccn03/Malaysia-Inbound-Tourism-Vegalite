@@ -1,0 +1,124 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 300,
+
+  "data": {
+  "url": "../data/tourist_expenditure.csv"
+  },
+
+  "params": [
+    {
+      "name": "Category_filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Accommodation",
+          "Food & Beverage",
+          "Shopping",
+          "Transport",
+          "Leisure & Others"
+        ],
+        "labels": [
+          "All",
+          "Accommodation",
+          "Food & Beverage",
+          "Shopping",
+          "Transport",
+          "Leisure & Others"
+        ],
+        "name": "Filter by Category: "
+      }
+    }
+  ],
+
+  "transform": [
+    {"filter": "Category_filter == null || datum.Category == Category_filter"}
+  ],
+
+  "layer": [
+    {
+      "selection": {
+        "category_highlight": {
+          "type": "multi",
+          "fields": ["Category"],
+          "bind": "legend"
+        }
+      },
+      "mark": {"type": "bar"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year", "labelAngle":360}},
+        "y": {
+          "aggregate": "sum",
+          "field": "Expenditure_RM_Mil",
+          "type": "quantitative",
+          "axis": {"title": "Expenditure (RM Million)"}
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "legend": {"title": "Category"},
+          "scale": {
+            "domain": [
+              "Accommodation",
+              "Food & Beverage",
+              "Shopping",
+              "Transport",
+              "Leisure & Others"
+            ],
+            "range": [
+              "#1f77b4",
+              "#9467bd",
+              "#ff7f0e",
+              "#fee800",
+              "#d62728"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "category_highlight", "value": 1},
+          "value": 0.3
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Category", "type": "nominal"},
+          {
+            "field": "Expenditure_RM_Mil",
+            "type": "quantitative",
+            "title": "Expenditure (RM Million)"
+          },
+          {"field": "Percent", "type": "quantitative", "title": "Percent (%)"}
+        ],
+        "order": {"field": "Category", "type": "nominal"}
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {"op": "sum", "field": "Expenditure_RM_Mil", "as": "Total_Expenditure"}
+          ],
+          "groupby": ["Year"]
+        },
+        {
+          "calculate": "format(datum.Total_Expenditure, ',.1f') + 'M'",
+          "as": "Total_Label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Total_Expenditure", "type": "quantitative"},
+        "text": {"field": "Total_Label", "type": "nominal"}
+      }
+    }
+  ]
+}

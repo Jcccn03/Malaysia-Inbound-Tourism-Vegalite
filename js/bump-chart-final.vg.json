@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart with points and three-letter codes",
+  "data": {"url": "../data/tourist_ranked_top10_abbr.csv"},
+  "width": 600,
+  "height":300,
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle":360, "offset": 20}},
+        "y": {"field": "Rank", "type": "quantitative", "scale": {"reverse": true}, "axis": null},
+        "color": {
+            "field": "Country",
+            "type": "nominal",
+            "legend": {"title": "Country", "orient": "bottom", "columns": 5, "labelFontSize":10, "symbolSize": 100, "padding":10},
+            "scale": {
+                    "domain": ["SINGAPORE", "INDONESIA", "CHINA", "THAILAND", "BRUNEI", "SOUTH KOREA", "INDIA", "PHILIPPINES", "VIETNAM", "AUSTRALIA"],
+                "range": [
+      "#3887c0", "#86bcdc", "#ff9da6", "#CC79A7", "#6b6ecf",
+      "#fb8d3d", "#ec3f2f", "#f9de30", "#b3b3b3", "#9c6b4e"
+    ]            }
+}
+
+        
+      }
+    },
+    {
+      "mark": {"type": "point", "size": 450, "filled": true}, 
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Rank", "type": "quantitative"},
+        "color": {"field": "Country", "type": "nominal"},
+        "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Year", "type": "ordinal"},
+            {"field": "Arrival", "type": "quantitative"}]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "center", "baseline": "middle", "fontSize": 10, "color": "black", "fontWeight":"bold"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Rank", "type": "quantitative"},
+        "text": {"field": "Abbr", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "axis": {"grid": true},
+    "view": {"stroke": "transparent"}
+  }
+}
