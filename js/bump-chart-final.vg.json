@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Bump chart with points and three-letter codes",
-  "data": {"url": "../data/tourist_ranked_top10_abbr.csv"},
+  "data": {"url": "data/tourist_ranked_top10_abbr.csv"},
   "width": 600,
   "height":300,
   "layer": [
