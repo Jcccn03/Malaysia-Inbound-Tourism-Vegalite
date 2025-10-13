@@ -32,13 +32,13 @@
     },
     {
       "data": {
-        "url": "../js/mys_map.json",
+        "url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/js/mys_map.json",
         "format": {"type": "topojson", "feature": "my"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
-      "data": {"url": "../data/parks.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/data/parks.csv"},
       "transform": [
         {"filter": "datum.Year == year_selection"},
         {

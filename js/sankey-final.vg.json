@@ -5,7 +5,7 @@
   "data": [
     {
       "name": "rawData",
-      "url": "../data/mot-entry.csv",
+      "url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/data/mot-entry.csv",
       "format": {"type": "csv"},
       "transform": [
         {
