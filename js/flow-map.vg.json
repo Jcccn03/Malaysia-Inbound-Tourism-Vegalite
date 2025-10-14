@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1210,
+    "width": 1290,
     "height": 450,
     "projection": {
         "type": "equalEarth"
@@ -94,7 +94,17 @@
                             14
                         ]
                     },
-                    "title": "Arrival Count"
+                    "title": "Arrival Count",
+                    "legend": {
+                        "orient": "none",
+                        "legendX": 1160,
+                        "legendY": 15,
+                        "direction": "vertical",
+                        "fillColor": null,
+                        "strokeColor": null,
+                        "cornerRadius": 6,
+                        "padding": 5
+                    }
                 },
                 "color": {
                     "value": "#3182bd"
@@ -120,7 +130,9 @@
                 "color": "#1e588a"
             },
             "encoding": {
-                "opacity": { "value": 0.7 },
+                "opacity": {
+                    "value": 0.7
+                },
                 "longitude": {
                     "field": "Longitude",
                     "type": "quantitative"
