@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/styles2.css" media="all">
 </head>
@@ -35,63 +38,107 @@
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>Where Tourists Come From?</h2>
+                <p style="font-weight: bold; color: gray;">(2018-2023)</p>
                 <div id="flow-map" class="vis-container"></div>
             </div>
         </div>
+        <br>
 
         <!-- Tourist Ranking (Text Left, Chart Right) -->
         <div class="pure-g">
             <div class="pure-u-1-2">
-                <div class="description description-left">
-                    <h2>How Main Source Markets Change Over Time?</h2>
-                    <p>Singapore consistently ranks first as the top source of visitors over the years, maintaining a strong lead in visitor numbers compared to other countries.</p>
-                </div>
-            </div>
-            <div class="pure-u-1-2">
                 <div id="bump-chart" class="vis-container fixed-size"></div>
             </div>
+            <div class="pure-u-1-2">
+                <div class="description description-right">
+                    <h2 style="letter-spacing: -0.1px;">How Main Source Markets Change Over Time?</h2>
+                    <p>Singapore consistently ranks first as the top source of visitors over the years, maintaining a
+                        strong lead in visitor numbers compared to other countries.</p>
+                </div>
+            </div>
+
         </div>
 
         <!-- Sankey Diagram (Chart Left, Text Right) -->
         <div class="pure-g">
+
             <div class="pure-u-1-2">
                 <div id="sankey" class="vis-container fixed-size"></div>
             </div>
             <div class="pure-u-1-2">
                 <div class="description description-right">
                     <h2>How Tourists Enter Malaysia?</h2>
-                    <p><b>Land crossings</b> are the most common mode of entry for international tourists, with major checkpoints like <b>Tambak Johor (BSI) and Gelang Patah (KSAB)</b> handling the bulk of arrivals. <b>Air travel</b> via <b>KLIA and KLIA 2</b> follows closely, while sea and rail modes contribute smaller numbers. Travel fell sharply in 2020–2021 due to restrictions, but arrivals across all modes rebounded in 2022–2023.</p>
+                    <p><b>Land crossings</b> are the most common mode of entry for international tourists, with major
+                        checkpoints like <b>Tambak Johor (BSI) and Gelang Patah (KSAB)</b> handling the bulk of
+                        arrivals. <b>Air travel</b> via <b>KLIA and KLIA 2</b> follows closely, while sea and rail modes
+                        contribute smaller numbers. Travel fell sharply in 2020–2021 due to restrictions, but arrivals
+                        across all modes rebounded in 2022–2023.</p>
                 </div>
             </div>
+
         </div>
+        <div style="margin-top: 70px;"></div>
+        
 
         <!-- Stacked Bar (Text Left, Chart Right) -->
         <div class="pure-g">
             <div class="pure-u-1-2">
-                <div class="description description-left">
-                    <h2>How Tourists Spend in Malaysia?</h2>
-                    <p>The expenditure breakdown shows that <b>shopping</b> consistently accounts for the largest share of tourist spending, followed by accommodation and transport. </p><br><p>COVID-19 pandemic in 2020–2021 caused a sharp decline in spending across all categories, but spending rebounded strongly in 2022–2023.</p>
-                </div>
-            </div>
-            <div class="pure-u-1-2">
                 <div id="stacked-bar" class="vis-container fixed-size"></div>
             </div>
+            <div class="pure-u-1-2">
+                <div class="description description-right">
+                    <h2>How Tourists Spend in Malaysia?</h2>
+                    <p>The expenditure breakdown shows that <b>shopping</b> consistently accounts for the largest share
+                        of tourist spending, followed by accommodation and transport. </p><br>
+                    <p>COVID-19 pandemic in 2020–2021 caused a sharp decline in spending across all categories, but
+                        spending rebounded strongly in 2022–2023.</p>
+                </div>
+            </div>
+
         </div>
+        <div style="margin-top: 60px;"></div>
 
         <!-- Symbol Map (Full Width) -->
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>Distribution of Tourists to Parks in Malaysia</h2>
-                <div id="symbol-map" class="vis-container"></div>
-                <p class="description-full">International tourists not only visit the top 3 parks but also show strong interest in marine destinations like Tun Sakaran and Terengganu Marine Park, while inland parks and wildlife centers attract eco-tourists seeking unique experiences. Visitor numbers dropped sharply in 2020–2021 due to travel restrictions but have rebounded strongly from 2022 onwards.</p>
+
+                <div class="vis-wrapper">
+                    <div id="symbol-map" class="vis-container"></div>
+
+                    <div class="map-description">
+                        <p>
+                            International tourists not only visit the top 3 parks but also show strong interest in
+                            marine destinations
+                            like Tun Sakaran and Terengganu Marine Park, while inland parks and wildlife centers attract
+                            eco-tourists
+                            seeking unique experiences.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div> <!-- end page -->
 
+    <!-- Footer -->
+    <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+            <p><strong>Author:</strong> Siau Jia Chien</p>
+            <p><strong>Date:</strong> 14 October 2025</p>
+            <p><strong>Sources:</strong>
+                Department of Statistics Malaysia (DOSM).
+                <a href="https://data.gov.my"
+                    target="_blank">https://open.dosm.gov.my/publications?page=1&search=tourism+satellite+account</a> |
+                Tourism Malaysia Official Statistics. <a href="https://data.tourism.gov.my/"
+                    target="_blank">https://data.tourism.gov.my/publications</a>
+            </p>
+        </div>
+    </div>
+
     <!-- Vega Embeds -->
     <script type="text/javascript">
-        var spec1 = "js/flow-map2.vg.json";
+        var spec1 = "js/flow-map.vg.json";
         var spec2 = "js/bump-chart-final.vg.json";
         var spec3 = "js/sankey-final.vg.json";
         var spec4 = "js/stacked-bar.vg.json";
