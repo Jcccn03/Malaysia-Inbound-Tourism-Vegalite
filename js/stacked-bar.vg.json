@@ -1,12 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
+  "width": 525,
   "height": 300,
-
   "data": {
-  "url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/data/tourist_expenditure.csv"
+    "url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/data/tourist_expenditure.csv"
   },
-
   "params": [
     {
       "name": "Category_filter",
@@ -32,33 +30,57 @@
       }
     }
   ],
-
   "transform": [
-    {"filter": "Category_filter == null || datum.Category == Category_filter"}
+    {
+      "filter": "Category_filter == null || datum.Category == Category_filter"
+    }
   ],
-
   "layer": [
     {
       "selection": {
         "category_highlight": {
           "type": "multi",
-          "fields": ["Category"],
+          "fields": [
+            "Category"
+          ],
           "bind": "legend"
         }
       },
-      "mark": {"type": "bar"},
+      "mark": {
+        "type": "bar"
+      },
       "encoding": {
-        "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year", "labelAngle":360}},
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {
+            "title": "Year",
+            "labelAngle": 360
+          }
+        },
         "y": {
           "aggregate": "sum",
           "field": "Expenditure_RM_Mil",
           "type": "quantitative",
-          "axis": {"title": "Expenditure (RM Million)"}
+          "axis": {
+            "title": "Expenditure (RM Million)"
+          }
         },
         "color": {
           "field": "Category",
           "type": "nominal",
-          "legend": {"title": "Category"},
+          "legend": {
+            "title": "Category",
+            "orient": "none",
+            "legendX": 0,
+            "legendY": -50,
+            "direction": "horizontal",
+            "fillColor": "#ffffffcc",
+            "strokeColor": "#ddd",
+            "cornerRadius": 6,
+            "padding": 5,
+            "columnPadding": 30
+          },
           "scale": {
             "domain": [
               "Accommodation",
@@ -77,30 +99,51 @@
           }
         },
         "opacity": {
-          "condition": {"selection": "category_highlight", "value": 1},
+          "condition": {
+            "selection": "category_highlight",
+            "value": 1
+          },
           "value": 0.3
         },
         "tooltip": [
-          {"field": "Year", "type": "ordinal"},
-          {"field": "Category", "type": "nominal"},
+          {
+            "field": "Year",
+            "type": "ordinal"
+          },
+          {
+            "field": "Category",
+            "type": "nominal"
+          },
           {
             "field": "Expenditure_RM_Mil",
             "type": "quantitative",
             "title": "Expenditure (RM Million)"
           },
-          {"field": "Percent", "type": "quantitative", "title": "Percent (%)"}
+          {
+            "field": "Percent",
+            "type": "quantitative",
+            "title": "Percent (%)"
+          }
         ],
-        "order": {"field": "Category", "type": "nominal"}
+        "order": {
+          "field": "Category",
+          "type": "nominal"
+        }
       }
     },
-
     {
       "transform": [
         {
           "aggregate": [
-            {"op": "sum", "field": "Expenditure_RM_Mil", "as": "Total_Expenditure"}
+            {
+              "op": "sum",
+              "field": "Expenditure_RM_Mil",
+              "as": "Total_Expenditure"
+            }
           ],
-          "groupby": ["Year"]
+          "groupby": [
+            "Year"
+          ]
         },
         {
           "calculate": "format(datum.Total_Expenditure, ',.1f') + 'M'",
@@ -115,9 +158,18 @@
         "color": "black"
       },
       "encoding": {
-        "x": {"field": "Year", "type": "ordinal"},
-        "y": {"field": "Total_Expenditure", "type": "quantitative"},
-        "text": {"field": "Total_Label", "type": "nominal"}
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Total_Expenditure",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Total_Label",
+          "type": "nominal"
+        }
       }
     }
   ]
