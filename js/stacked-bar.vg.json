@@ -117,7 +117,8 @@
           {
             "field": "Expenditure_RM_Mil",
             "type": "quantitative",
-            "title": "Expenditure (RM Million)"
+            "title": "Expenditure (RM Million)",
+            "format": ",.1f"
           },
           {
             "field": "Percent",

@@ -97,10 +97,6 @@
               "order": "descending"
             }
           ]
-        },
-        {
-          "calculate": "datum.Notes != null && datum.Notes != '' ? datum.Notes: null ",
-          "as": "NotesTooltip"
         }
       ],
       "layer": [
@@ -142,7 +138,8 @@
               },
               {
                 "field": "Visitors",
-                "title": "Tourist count"
+                "title": "Tourist count",
+                "format": ","
               },
               {
                 "field": "Year",

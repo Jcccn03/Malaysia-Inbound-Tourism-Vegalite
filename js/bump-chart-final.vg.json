@@ -92,7 +92,8 @@
           },
           {
             "field": "Arrival",
-            "type": "quantitative"
+            "type": "quantitative",
+            "format": ","
           }
         ]
       }

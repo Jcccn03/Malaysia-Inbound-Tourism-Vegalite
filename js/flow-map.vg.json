@@ -116,7 +116,8 @@
                     },
                     {
                         "field": "Arrival",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "format": ",.0f"
                     }
                 ]
             }
@@ -149,7 +150,9 @@
                         "field": "Country"
                     },
                     {
-                        "field": "Arrival"
+                        "field": "Arrival",
+                        "type": "quantitative",
+                        "format": ",.0f"
                     }
                 ]
             }
