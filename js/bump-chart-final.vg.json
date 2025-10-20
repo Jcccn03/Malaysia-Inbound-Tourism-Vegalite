@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Bump chart with points and three-letter codes",
   "data": {
     "url": "https://raw.githubusercontent.com/Jcccn03/Malaysia-Inbound-Tourism-Vegalite/master/data/tourist_ranked_top10_abbr.csv"
   },
