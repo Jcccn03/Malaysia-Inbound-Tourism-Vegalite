@@ -26,15 +26,17 @@
 
 <body>
     <div class="page">
-
         <!-- Title -->
-        <div class="pure-g">
+        <div class="pure-g header-banner">
             <div class="pure-u-1-1">
-                <h1 style="text-align: center;">Malaysia Inbound Tourism</h1>
+                <div class="banner-container">
+                    <img src="data/banner.png" alt="Malaysia Inbound Tourism Banner">
+                    <h1>Malaysia Inbound Tourism</h1>
+                </div>
             </div>
         </div>
 
-        <!-- Flow Map (Full Width) -->
+        <!-- Flow Map -->
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>Where Tourists Come From?</h2>
@@ -44,7 +46,7 @@
         </div>
         <br>
 
-        <!-- Tourist Ranking (Text Left, Chart Right) -->
+        <!-- Tourist Ranking -->
         <div class="pure-g">
             <div class="pure-u-1-2">
                 <div id="bump-chart" class="vis-container fixed-size"></div>
@@ -52,14 +54,13 @@
             <div class="pure-u-1-2">
                 <div class="description description-right">
                     <h2 style="letter-spacing: -0.1px;">How Main Source Markets Change Over Time?</h2>
-                    <p>Singapore consistently ranks first as the top source of visitors over the years, maintaining a
-                        strong lead in visitor numbers compared to other countries.</p>
+                    <p><b>Singapore</b> remained the leading source of visitors throughout the years, followed by Indonesia and China. Visitor numbers and rankings shifted sharply in <b>2020–2021</b>, with Thailand briefly taking the top position as <b>overall arrivals dropped significantly</b>. </p><p>2022 onward, numbers recovered quickly after travel restrictions eased, with Singapore and Indonesia regaining their dominant positions by 2023.</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- Sankey Diagram (Chart Left, Text Right) -->
+        <!-- Sankey Diagram -->
         <div class="pure-g">
 
             <div class="pure-u-1-2">
@@ -68,19 +69,19 @@
             <div class="pure-u-1-2">
                 <div class="description description-right">
                     <h2>How Tourists Enter Malaysia?</h2>
-                    <p><b>Land crossings</b> are the most common mode of entry for international tourists, with major
-                        checkpoints like <b>Tambak Johor (BSI) and Gelang Patah (KSAB)</b> handling the bulk of
-                        arrivals. <b>Air travel</b> via <b>KLIA and KLIA 2</b> follows closely, while sea and rail modes
-                        contribute smaller numbers. Travel fell sharply in 2020–2021 due to restrictions, but arrivals
-                        across all modes rebounded in 2022–2023.</p>
+                    <p>
+                        <b>Land transport is the dominant mode of entry</b> for international tourists, led by the Johor–Singapore crossings at <b>Tambak Johor (BSI)</b> and <b>Gelang Patah (KSAB)</b>, 
+                        which handle the majority of arrivals. <b>Air travel</b> ranks second, mainly through <b>KLIA</b> and <b>KLIA2</b>, while sea and rail account for smaller shares. 
+                        
+                    </p>
                 </div>
             </div>
 
         </div>
         <div style="margin-top: 70px;"></div>
-        
 
-        <!-- Stacked Bar (Text Left, Chart Right) -->
+
+        <!-- Stacked Bar -->
         <div class="pure-g">
             <div class="pure-u-1-2">
                 <div id="stacked-bar" class="vis-container fixed-size"></div>
@@ -88,17 +89,20 @@
             <div class="pure-u-1-2">
                 <div class="description description-right">
                     <h2>How Tourists Spend in Malaysia?</h2>
-                    <p>The expenditure breakdown shows that <b>shopping</b> consistently accounts for the largest share
-                        of tourist spending, followed by accommodation and transport. </p><br>
-                    <p>COVID-19 pandemic in 2020–2021 caused a sharp decline in spending across all categories, but
-                        spending rebounded strongly in 2022–2023.</p>
+                    <p><b>Shopping</b> makes up the largest share of tourist spending (around one-third), followed by 
+                        accommodation and transport.
+                    </p>
+                    <p>
+                        <b>During 2022-2021, overall spending collapsed</b>, especially on shopping and leisure, with accommodation and transport 
+                        temporarily taking the lead. From <b>2022 onward</b>, expenditure rebounded, and the <b>pre-pandemic spending pattern returned</b>.
+                    </p>
                 </div>
             </div>
 
         </div>
         <div style="margin-top: 60px;"></div>
 
-        <!-- Symbol Map (Full Width) -->
+        <!-- Symbol Map -->
         <div class="pure-g">
             <div class="pure-u-1-1">
                 <h2>Distribution of Tourists to Parks in Malaysia</h2>
@@ -108,12 +112,12 @@
 
                     <div class="map-description">
                         <p>
-                            International tourists not only visit the top 3 parks but also show strong interest in
-                            marine destinations
-                            like Tun Sakaran and Terengganu Marine Park, while inland parks and wildlife centers attract
-                            eco-tourists
-                            seeking unique experiences.
+                            While marine and island parks attract the majority of international visitors, inland national parks and wildlife sanctuaries also draw eco-tourists seeking nature and wildlife experiences.
                         </p>
+                    </div>
+                    <div class="map-description-2">
+                        <p>Tunku Abdul Rahman Park in Sabah consistently ranks as the top destination, 
+                            attracting visitors with its stunning islands, clear waters, diverse marine life, and snorkeling and island-hopping activities.</p>
                     </div>
                 </div>
             </div>
@@ -125,13 +129,14 @@
     <div class="pure-g">
         <div class="pure-u-1-1 small-font">
             <p><strong>Author:</strong> Siau Jia Chien</p>
-            <p><strong>Date:</strong> 14 October 2025</p>
-            <p><strong>Sources:</strong>
+            <p><strong>Date Created:</strong> 14 October 2025</p>
+            <p><strong>Data Sources:</strong><br>
                 Department of Statistics Malaysia (DOSM).
-                <a href="https://data.gov.my"
-                    target="_blank">https://open.dosm.gov.my/publications/tourism_2023</a><br>
+                <a href="https://data.gov.my" target="_blank">https://open.dosm.gov.my/publications/tourism_2023</a><br>
                 Tourism Malaysia Official Statistics. <a href="https://data.tourism.gov.my/"
-                    target="_blank">https://data.tourism.gov.my/publications</a>
+                    target="_blank">https://data.tourism.gov.my/publications</a><br>
+                    World Bank Open Data. <a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=MY" target="_blank">https://data.worldbank.org/indicator/ST.INT.ARVL?locations=MY</a> | <a href="https://data.worldbank.org/indicator/ST.INT.RCPT.CD?locations=MY" target="_blank">https://data.worldbank.org/indicator/ST.INT.RCPT.CD?locations=MY</a>
+
             </p>
         </div>
     </div>
